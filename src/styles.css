@@ -1,4 +1,176 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+body {
+  --cs-color: #377ae1;
+  --focus-blue: #2684ff;
+  --transparent-blue: #3d7fd133;
+  --white-blue: #d0e5ff;
+  --lighter-blue: #a1c5f0;
+  --light-blue: #71a7e9;
+  --blue: #3d7fd1;
+  --dark-blue: #336cb2;
+  --darker-blue: #062c5a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  border: none;
+}
+
+.tab-view {
+  --button-width: 150px;
+  background: linear-gradient(145deg, #ffffff, #eaeaea);
+  border-radius: 50px;
+  box-shadow: 5px 10px 20px #dedede, -5px -10px 10px #ffffff;
+  max-width: 700px;
+  padding: 10px;
+  height: 500px;
+}
+
+.tab-bar {
+  background: #fafafa;
+  border-radius: 40px 40px 10px 10px;
+  box-shadow: inset 5px 5px 5px #eeeeee, inset -5px -5px 5px #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.button-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.tab-bar .btn-indicator {
+  background-color: var(--white-blue);
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: 100px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  transition: left 150ms ease-out;
+  width: var(--button-width);
+  z-index: 1;
+}
+
+.tab-bar-btn {
+  align-items: center;
+  background: transparent;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+  outline: none;
+  position: relative;
+  width: var(--button-width);
+  z-index: 5;
+}
+
+.tab-bar-btn:focus span {
+  /* text-decoration: underline; */
+}
+
+.tab-bar-btn.active > .tab-bar-icon {
+  transform: scale(1.2);
+}
+
+.tab-bar-btn.active > .tab-bar-txt {
+  color: var(--blue);
+  transform: scale(1.2);
+}
+
+.tab-bar-icon {
+  color: var(--blue);
+  transition-duration: 0.3s;
+}
+
+.tab-bar-txt {
+  color: var(--lighter-blue);
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 1;
+  transition-duration: 0.3s;
+  user-select: none;
+}
+
+.tab-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px 40px;
+}
+
+.slideInOutLeft {
+  margin: 80px !important;
+}
+.slideInOutLeft-enter {
+  opacity: 0;
+  transform: translateX(-800px);
+}
+.slideInOutLeft-enter-done {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 200ms ease;
+}
+
+.slideInOutLeft-exit {
+  opacity: 1;
+  transform: translateX(0px);
+}
+.slideInOutLeft-exit-active {
+  opacity: 0;
+  transform: translateX(-800px);
+  transition: all 400ms ease;
+}
+
+.slideInOutRight {
+  margin: 80px !important;
+}
+.slideInOutRight-enter {
+  opacity: 0;
+  transform: translateX(800px);
+}
+.slideInOutRight-enter-done {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 200ms ease;
+}
+
+.slideInOutRight-exit {
+  opacity: 1;
+  transform: translateX(0px);
+}
+.slideInOutRight-exit-active {
+  opacity: 0;
+  transform: translateX(800px);
+  transition: all 400ms ease;
+}
+
+.fade {
+  margin: 80px !important;
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease;
 }
