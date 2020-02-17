@@ -61,12 +61,7 @@ export const TabView: React.FC = ({ tabs, initialIndex, width }: Props) => {
                   style={{ width: buttonWidth }}>
                   <span
                     className={`tab-bar-icon ${isSelected ? 'active' : ''}`}>
-                    {t.icon && (
-                      <t.icon
-                        size={28}
-                        color={isSelected ? Colors.BLUE : Colors.LIGHTER_BLUE}
-                      />
-                    )}
+                    {t.icon && t.icon}
                   </span>
                   <span className="tab-bar-txt">{t.title}</span>
                 </button>
